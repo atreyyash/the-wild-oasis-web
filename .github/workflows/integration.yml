@@ -8,13 +8,10 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [18.x, 20.x, 22.x]
-
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
@@ -22,20 +19,17 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: 'Intsalling Dependecies'
+    - name: Intsalling Dependecies
       run: npm i
     
-    - name: 'Build'
+    - name: Build
       run: npm run build
 
   unit-tests:
-
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [18.x, 20.x, 22.x]
-
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
@@ -43,8 +37,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    -  name: 'Intsalling Dependecies'
+    -  name: Intsalling Dependecies
       run: npm i
-    
-    - name: 'Running unit tests'
+    - name: Running unit tests
       run: npm run test
