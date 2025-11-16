@@ -1,20 +1,20 @@
 import { render, screen } from "@testing-library/react";
-import RootLayout from "../layout";
+import RootLayout from "./layout";
 
 // Mock the child components
-jest.mock("../_components/Logo", () => {
+jest.mock("./_components/Logo", () => {
   return function MockLogo() {
     return <div data-testid="logo">Logo</div>;
   };
 });
 
-jest.mock("../_components/Navigation", () => {
+jest.mock("./_components/Navigation", () => {
   return function MockNavigation() {
     return <div data-testid="navigation">Navigation</div>;
   };
 });
 
-jest.mock("../_components/Header", () => {
+jest.mock("./_components/Header", () => {
   return function MockHeader({ children }) {
     return <header data-testid="header">{children}</header>;
   };
