@@ -22,10 +22,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    -name: 'Intsalling Dependecies'
+    - name: 'Intsalling Dependecies'
       run: npm i
     
-    -name: 'Build'
+    - name: 'Build'
       run: npm run build
 
   unit-tests:
@@ -43,8 +43,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    -name: 'Intsalling Dependecies'
+    -  name: 'Intsalling Dependecies'
       run: npm i
     
-    -name: 'Running unit tests'
+    - name: 'Running unit tests'
       run: npm run test
